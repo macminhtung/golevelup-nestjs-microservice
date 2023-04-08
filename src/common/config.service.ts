@@ -61,10 +61,11 @@ export class ConfigService {
         : `amqp://${host}:${port}`;
     const options: RabbitMQConfig = {
       uri: rabbitUri,
+      enableControllerDiscovery: true,
       exchanges: [
         {
-          name: RABBIT_EXCHANGE_NAMES.FANOUT,
-          type: RABBIT_EXCHANGE_TYPES.FANOUT,
+          name: RABBIT_EXCHANGE_NAMES.TOPIC,
+          type: RABBIT_EXCHANGE_TYPES.TOPIC,
         },
       ],
       // channels: {
@@ -77,7 +78,6 @@ export class ConfigService {
       //   },
       // },
     };
-    console.log('options =', options);
 
     return options;
   }

@@ -1,5 +1,11 @@
 export const RABBIT_QUEUE_NAMES = {
-  MESSAGE: 'advance-message-queue',
+  MESSAGE: 'message-queue',
+  RPC_MESSAGE: 'message-queue-rpc',
+};
+
+export const RABBIT_ROUTING_KEY = {
+  MESSAGE: 'message-routing-key',
+  RPC_MESSAGE: 'message-routing-key-rpc',
 };
 
 export const RABBIT_EXCHANGE_TYPES = {
